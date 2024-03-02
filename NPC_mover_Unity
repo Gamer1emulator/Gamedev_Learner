@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class NPC : MonoBehaviour
+{
+    public float healt = 5;
+    public float speed = 2;
+    public  float level = 0.5f;
+    public Transform nPC;
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        healt *= level;
+        print(healt);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        nPC.Translate(Vector3.right * speed * Time.deltaTime);
+    }
+}
